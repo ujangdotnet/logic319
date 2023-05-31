@@ -8,11 +8,13 @@
 //PerulanganBersarang();
 //PerulanganBersarangDua();
 //BelajarStrings();
-StringsInsert();
+//StringsInsert();
+ConvertAll();
 
 
 
 // While
+
 static void PerulanganWhile()
 {
     Console.WriteLine("--Perulangan While--");
@@ -199,4 +201,93 @@ static void StringsInsert()
     string kataBaru = Console.ReadLine();
 
     Console.WriteLine($"{kata.Replace(kataLama, kataBaru)}");
+}
+
+// Contain String
+
+static void ContainString()
+{
+    Console.WriteLine("--Contain Strings--");
+    Console.WriteLine();
+    Console.Write("Masukan kata: ");
+    string kata = Console.ReadLine();
+    Console.Write("Masukan contain: ");
+    string contain = Console.ReadLine();
+
+    if (kata.Contains(contain))
+    {
+        Console.WriteLine($"Kata {kata} mengandung {contain}");
+    }else
+    {
+        Console.WriteLine($"Kata {kata} tidak mengandung {contain}");
+    }
+}
+
+// Split and Join
+
+static void SplitAndJoin()
+{
+    Console.WriteLine("--Split & Join--");
+    Console.WriteLine();
+    Console.Write("Masukan kalimat: ");
+    string kalimat = Console.ReadLine();
+    Console.Write("Masukan split: ");
+    string split = Console.ReadLine();
+
+    string[] kataKata = kalimat.Split(split);
+
+    foreach (String kata in kataKata)
+    {
+        Console.WriteLine(kata);
+    }
+
+    Console.WriteLine(string.Join("+", kataKata));
+}
+
+// Substring
+
+
+// Convert String
+
+static void ConvString()
+{
+    Console.WriteLine("--String ToCharArray--");
+    Console.WriteLine();
+    Console.Write("Masukan kalimat: ");
+    string kalimat = Console.ReadLine();
+
+    char[] array = kalimat.ToCharArray();
+
+    foreach(char x in array)
+    {
+        Console.WriteLine(x);
+    }
+
+    Console.WriteLine();
+
+    for(int i = 0; i < array.Length; i++)
+    {
+        Console.WriteLine(array[i]);
+    }
+    
+}
+
+// Convert All
+
+static void ConvertAll()
+{
+    Console.WriteLine("--Convert All--");
+    Console.Write("Masukan input angka pakai spasi: ");
+    string[] input = Console.ReadLine().Split(" ");
+
+    int sum = 0;
+
+    int[] array = Array.ConvertAll(input, Convert.ToInt32);
+
+    foreach (int x in array)
+    {
+        sum += x;
+    }
+
+    Console.WriteLine($"Jumlah = {sum}");
 }
