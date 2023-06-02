@@ -1,6 +1,6 @@
 ﻿//KUIS LOGIC HARI KE 3
 
-SoalEmpat();
+SoalTujuh();
 
 //Soal No 1
 static void SoalSatu()
@@ -10,23 +10,31 @@ static void SoalSatu()
     Console.Write("Masukan nilai (1 -100): ");
     int nilai = int.Parse(Console.ReadLine());
 
-    if (nilai >= 90 && nilai <= 100)
-    {
-        Console.WriteLine("Grade A");
+    //inisiasi variabel
+    string ucapan = "";
 
-    }else if (nilai >= 70 && nilai <= 89)
+    switch (nilai)
     {
-        Console.WriteLine("Grade B");
-
-    }else if (nilai >= 50 && nilai <= 69)
-    {
-        Console.WriteLine("Grade C");
-
-    }else
-    {
-        Console.WriteLine("Grade E");
+        case int x when x >= 90 && x <= 100:
+            ucapan = "Grade A";
+            break;
+        case int x when x >= 70 && x <= 89:
+            ucapan = "Grade B";
+            break;
+        case int x when x >= 50 && x <= 69:
+            ucapan = "Grade C";
+            break;
+        case int x when x > 1 && x < 50:
+            ucapan = "Grade E";
+            break;
+        default:
+            Console.WriteLine($"Maaf, nilai yang anda masukan salah.");
+            break;
     }
+
+    Console.WriteLine($"Selamat, kamu mendapatkan {ucapan}");
 }
+//
 
 //Soal No 2
 static void SoalDua()
@@ -36,40 +44,42 @@ static void SoalDua()
     Console.Write("Masukan Jumlah Pulsa: ");
     int pulsa = int.Parse(Console.ReadLine());
 
-    if (pulsa >= 10000 && pulsa < 25000)
+    //inisiasi variabel
+    int point = 0;
+
+    switch (pulsa)
     {
-        Console.WriteLine($"Pulsa \t: {pulsa}");
-        Console.WriteLine($"Point \t: 80");
-    } else if (pulsa >= 25000 && pulsa < 50000)
-    {
-        Console.WriteLine($"Pulsa \t: {pulsa}");
-        Console.WriteLine($"Point \t: 200");
-    }else if (pulsa >= 50000 && pulsa < 100000)
-    {
-        Console.WriteLine($"Pulsa \t: {pulsa}");
-        Console.WriteLine($"Point \t: 400");
-    }else if (pulsa >= 100000)
-    {
-        Console.WriteLine($"Pulsa \t: {pulsa}");
-        Console.WriteLine($"Point \t: 800");
-    }else
-    {
-        Console.WriteLine($"Pulsa \t: {pulsa}");
-        Console.WriteLine($"Point \t: 0");
+        case int x when x >= 10000 && x < 25000:
+            point = 80;
+            break;
+        case int x when x >= 25000 && x < 50000:
+            point = 200;
+            break;
+        case int x when x >= 50000 && x < 100000:
+            point = 400;
+            break;
+        case >= 100000:
+            point = 800;
+            break;
+        default:
+            Console.WriteLine($"Maaf, anda tidak mendapatkan point.");
+            break;
     }
 
+    Console.WriteLine($"Pulsa \t: {pulsa}");
+    Console.WriteLine($"Point \t: {point}");
 }
+//
 
 //Soal No 3
-
-static void SoalTiga()
-{
-    Console.WriteLine("--Soal Nomor Tiga--");
-    Console.WriteLine();
-}
+//static void SoalTiga()
+//{
+//    Console.WriteLine("--Soal Nomor Tiga--");
+//    Console.WriteLine();
+//}
+//
 
 //Soal No 4
-
 static void SoalEmpat()
 {
     Console.WriteLine("--Soal Nomor Empat--");
@@ -78,67 +88,72 @@ static void SoalEmpat()
     int belanja = int.Parse(Console.ReadLine());
     Console.Write("Ongkos kirim \t:");
     int ongkir = int.Parse(Console.ReadLine());
-    Console.Write("Pilihan Voucher \t:");
+    Console.Write("Pilihan Voucher\t:");
     int voucher = int.Parse(Console.ReadLine());
 
-    int diskonOngkir;
-    int diskonBelanja;
+    //deklarasi voucher &diskon belanja
+    int freeOngkir = 0;
+    int diskonBelanja = 0;
 
-    if (belanja >= 100000 && voucher == 1)
+    switch (belanja, voucher)
     {
-        diskonOngkir = 2000;
-        diskonBelanja = 10000;
-
-    }else if (belanja >= 50000 && voucher == 2)
-    {
-        diskonOngkir = 10000;
-        diskonBelanja = 10000;
-
-    }else if (belanja >= 30000 && voucher == 3)
-    {
-        diskonOngkir = 5000;
-        diskonBelanja = 5000;
-    }else
-    {
-        diskonBelanja = 0;
-        diskonOngkir = 0;
+        case ( >= 100000, 3):
+            freeOngkir = 20000;
+            diskonBelanja = 10000;
+            break;
+        case ( >= 50000, 2):
+            freeOngkir = 10000;
+            diskonBelanja = 10000;
+            break;
+        case ( >= 30000, 1):
+            freeOngkir = 5000;
+            diskonBelanja = 5000;
+            break;
+        default:
+            Console.WriteLine($"Maaf, voucher tidak tersedia.");
+            break;
     }
 
-    int totalBelanja = (belanja + ongkir) - (diskonOngkir + diskonBelanja);
-
+    int totalBelanja = (belanja + ongkir) - (freeOngkir + diskonBelanja);
+    Console.WriteLine($"--------------------------");
     Console.WriteLine($"Total belanja anda: {totalBelanja}");
 
 }
+//
 
 //Soal No 5
 static void SoalLima()
 {
     Console.WriteLine("--Soal Nomor Lima--");
     Console.WriteLine();
-    Console.Write("Masukan nama: ");
+    Console.Write("Masukan nama\t: ");
     string nama = Console.ReadLine();
-    Console.Write("Tahun lahir: ");
+    Console.Write("Tahun lahir\t: ");
     int tahunLahir = int.Parse(Console.ReadLine());
 
-    if (tahunLahir >= 1944 && tahunLahir <= 1964)
-    {
-        Console.WriteLine($"{nama}, berdasarkan tahun lahir anda tergolong Baby Groomer");
+    string generasi;
 
-    }else if (tahunLahir >= 1965 && tahunLahir <= 1979)
+    switch (tahunLahir)
     {
-        Console.WriteLine($"{nama}, berdasarkan tahun lahir anda tergolong Generasi X");
-
-    }else if (tahunLahir >= 1980 && tahunLahir <= 1994)
-    {
-        Console.WriteLine($"{nama}, berdasarkan tahun lahir anda tergolong Generasi Y (Millenials)");
-
-    }else if (tahunLahir >= 1995 && tahunLahir <= 2015)
-    {
-        Console.WriteLine($"{nama}, berdasarkan tahun lahir anda tergolong Generasi Z");
-    }else
-    {
-        Console.WriteLine($"{nama}, berdasarkan tahun lahir anda tidak punya golongan :(");
+        case int x when x >= 1944 && x <= 1964:
+            generasi = "Baby boomer";
+            break;
+        case int x when x >= 1965 && x <= 1979:
+            generasi = "Generasi X";
+            break;
+        case int x when x >= 1980 && x <= 1994:
+            generasi = "Generasi Y (Millenials)";
+            break;
+        case int x when x >= 1995 && x <= 2015:
+            generasi = "Generasi Z";
+            break;
+        default:
+            generasi = "Tidak mempunyai generasi";
+            break;
     }
+
+    Console.WriteLine($"----------------");
+    Console.WriteLine($"{nama}, berdasarkan tahun lahir anda  {generasi}");
 }
 
 //Soal No 6
@@ -197,48 +212,60 @@ static void SoalTujuh()
 {
     Console.WriteLine("--Soal Nomor Tujuh--");
     Console.WriteLine();
-    Console.Write("Berat badan anda (kg): ");
+    Console.Write("Berat badan anda (kg)\t: ");
     int berat = int.Parse(Console.ReadLine());
-    Console.Write("Tinggi badan anda (cm): ");
+    Console.Write("Tinggi badan anda (cm)\t: ");
     double tinggi = double.Parse(Console.ReadLine())/100;
 
+    //deklarasi rumus bmi
     double bmi = berat / (tinggi * tinggi);
 
-    if (bmi >= 25)
+    //inisiasi var kategori badan
+    string kategori = "";
+
+    switch (bmi)
     {
-        Console.WriteLine($"Nilai BMI anda {bmi}\n Anda temasuk berbadan gemuk!");
-    } else if (bmi >= 18.5 && bmi < 25)
-    {
-        Console.WriteLine($"Nilai BMI anda {bmi}\n Anda temasuk berbadan langsing/sehat!");
-    }else
-    {
-        Console.WriteLine($"Nilai BMI anda {bmi}\n Anda terlalu kurus!");
+        case >= 25:
+            kategori = "Berbadan Gemuk";
+            break;
+        case double x when x >= 18.5 && x < 25:
+            kategori = "Berbadan Langsing/ Sehat";
+            break;
+        case < 18.5:
+            kategori = "Terlalu Kurus";
+            break;
     }
+
+    Console.WriteLine($"Nilai BMI anda {bmi}\nAnda temasuk {kategori}");
 }
 
 //Soal No 8
-
 static void SoalDelapan()
 {
     Console.WriteLine("--Soal Nomor Delapan--");
     Console.WriteLine();
-    Console.Write("Masukan nilai MTK: ");
+    Console.Write("Masukan nilai MTK\t: ");
     int nilaiMTK = int.Parse(Console.ReadLine());
-    Console.Write("Masukan nilai Fisika: ");
+    Console.Write("Masukan nilai Fisika\t: ");
     int nilaiFisika = int.Parse(Console.ReadLine());
-    Console.Write("Masukan nilai Kimia: ");
+    Console.Write("Masukan nilai Kimia\t: ");
     int nilaiKimia = int.Parse(Console.ReadLine());
 
     int jumlahNilai = nilaiMTK + nilaiFisika + nilaiKimia;
-    int nilaiRata = jumlahNilai / 3;
+    double nilaiRata = jumlahNilai / 3;
+    string ucapan = "";
 
-    if (nilaiRata >= 75 && nilaiRata <= 100)
+    switch (nilaiRata)
     {
-        Console.WriteLine($"Nilai rata-rata: {nilaiRata}");
-        Console.WriteLine("Selamat\nKamu Berhasil\nKamu Hebat");
-    }else
-    {
-        Console.WriteLine($"Nilai rata-rata: {nilaiRata}");
-        Console.WriteLine("Maaf\nKamu Gagal");
+        case double x when x >= 50 && x <= 100:
+            ucapan = "Selamat\nKamu Berhasil\nKamu Hebat";
+            break;
+        case < 50:
+            ucapan = "Maaf\nKamu Gagal";
+            break;
     }
+
+    Console.WriteLine("----------------");
+    Console.WriteLine($"Nilai rata-rata: {nilaiRata}");
+    Console.WriteLine(ucapan);
 }
