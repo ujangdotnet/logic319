@@ -1,6 +1,6 @@
 ﻿//KUIS LOGIC HARI KE 3
 
-SoalTujuh();
+SoalEnam();
 
 //Soal No 1
 static void SoalSatu()
@@ -172,29 +172,26 @@ static void SoalEnam()
     int bulan = int.Parse(Console.ReadLine());
 
     int jumlahGatun = gapok + tunjangan;
-    var pajakGatun = 0;
+    float pajakGatun = 0;
 
-    if (jumlahGatun <= 5000000)
+    switch (jumlahGatun)
     {
-        pajakGatun = 3 / 100;
-
-    }else if (jumlahGatun >= 5000000 && jumlahGatun <= 10000000)
-    {
-        pajakGatun = 10 / 100;
-
-    }else if (jumlahGatun > 10000000)
-    {
-        pajakGatun = 15 / 100;
-    }else
-    {
-        pajakGatun = 0;
+        case > 10000000:
+            pajakGatun = 15 / 100;
+            break;
+        case int x when x > 5000000 && x <= 10000000:
+            pajakGatun = 10 / 100;
+            break;
+        case <= 10000000:
+            pajakGatun = 3 / 100;
+            break;
     }
 
     //inisiasi
 
-    var pajak = pajakGatun * jumlahGatun;
-    var bpjs = (3/100) * jumlahGatun;
-    var gaji = jumlahGatun - (pajak + bpjs);
+    float pajak = pajakGatun * jumlahGatun;
+    float bpjs = (3/100) * jumlahGatun;
+    float gaji = jumlahGatun - (pajak + bpjs);
     var totalGaji = jumlahGatun - ((pajak + bpjs) * bulan);
 
     Console.WriteLine($"Karyawan atas nama {nama} slip gaji sebagai berikut: ");
