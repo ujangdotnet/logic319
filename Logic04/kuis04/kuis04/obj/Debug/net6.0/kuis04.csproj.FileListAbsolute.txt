@@ -1,0 +1,15 @@
+C:\BATCH_319\LogicToGithub\Logic04\kuis04\kuis04\bin\Debug\net6.0\kuis04.exe
+C:\BATCH_319\LogicToGithub\Logic04\kuis04\kuis04\bin\Debug\net6.0\kuis04.deps.json
+C:\BATCH_319\LogicToGithub\Logic04\kuis04\kuis04\bin\Debug\net6.0\kuis04.runtimeconfig.json
+C:\BATCH_319\LogicToGithub\Logic04\kuis04\kuis04\bin\Debug\net6.0\kuis04.dll
+C:\BATCH_319\LogicToGithub\Logic04\kuis04\kuis04\bin\Debug\net6.0\kuis04.pdb
+C:\BATCH_319\LogicToGithub\Logic04\kuis04\kuis04\obj\Debug\net6.0\kuis04.csproj.AssemblyReference.cache
+C:\BATCH_319\LogicToGithub\Logic04\kuis04\kuis04\obj\Debug\net6.0\kuis04.GeneratedMSBuildEditorConfig.editorconfig
+C:\BATCH_319\LogicToGithub\Logic04\kuis04\kuis04\obj\Debug\net6.0\kuis04.AssemblyInfoInputs.cache
+C:\BATCH_319\LogicToGithub\Logic04\kuis04\kuis04\obj\Debug\net6.0\kuis04.AssemblyInfo.cs
+C:\BATCH_319\LogicToGithub\Logic04\kuis04\kuis04\obj\Debug\net6.0\kuis04.csproj.CoreCompileInputs.cache
+C:\BATCH_319\LogicToGithub\Logic04\kuis04\kuis04\obj\Debug\net6.0\kuis04.dll
+C:\BATCH_319\LogicToGithub\Logic04\kuis04\kuis04\obj\Debug\net6.0\refint\kuis04.dll
+C:\BATCH_319\LogicToGithub\Logic04\kuis04\kuis04\obj\Debug\net6.0\kuis04.pdb
+C:\BATCH_319\LogicToGithub\Logic04\kuis04\kuis04\obj\Debug\net6.0\kuis04.genruntimeconfig.cache
+C:\BATCH_319\LogicToGithub\Logic04\kuis04\kuis04\obj\Debug\net6.0\ref\kuis04.dll
