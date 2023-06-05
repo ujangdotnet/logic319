@@ -1,6 +1,18 @@
 ﻿//KUIS LOGIC HARI KE 3
 
-SoalSatu();
+//Run & Handle Eror
+
+try
+{
+    SoalDelapan();
+
+}
+catch (Exception e)
+{
+    Console.WriteLine("-----------");
+    Console.WriteLine(e.Message);
+    Console.WriteLine("-----------");
+}
 
 //Soal No 1
 static void SoalSatu()
@@ -72,11 +84,35 @@ static void SoalDua()
 //
 
 //Soal No 3
-//static void SoalTiga()
-//{
-//    Console.WriteLine("--Soal Nomor Tiga--");
-//    Console.WriteLine();
-//}
+static void SoalTiga()
+{
+    Console.WriteLine("--Soal Nomor Tiga--");
+    Console.WriteLine();
+    Console.Write("Belanja \t:");
+    int belanja = int.Parse(Console.ReadLine());
+    Console.Write("Jarak \t:");
+    int jarak = int.Parse(Console.ReadLine());
+    Console.Write("Kode Promo \t:");
+    string promo = Console.ReadLine();
+
+    var diskon = 0;
+
+    if (belanja >= 30000 || promo == "JKTOVO")
+    {
+        diskon = 4/100 * belanja;
+        if (diskon > 30000)
+        {
+            diskon = 30000;
+        }
+    }
+
+
+    //Output
+    Console.WriteLine($"Belanja \t: {belanja}");
+    Console.WriteLine($"Diskon 40% \t: {diskon}");
+    Console.WriteLine($"Ongkir \t: ");
+    Console.WriteLine($"Total Belanja \t: ");
+}
 //
 
 //Soal No 4
@@ -164,11 +200,11 @@ static void SoalEnam()
     Console.WriteLine();
     Console.Write("Nama: ");
     string nama = Console.ReadLine();
-    Console.Write("Tunjangan: ");
+    Console.Write("Tunjangan\t: ");
     int tunjangan = int.Parse(Console.ReadLine());
-    Console.Write("Gapok: ");
+    Console.Write("Gapok\t\t: ");
     int gapok = int.Parse(Console.ReadLine());
-    Console.Write("Banyak bulan: ");
+    Console.Write("Banyak bulan\t: ");
     int bulan = int.Parse(Console.ReadLine());
 
     int jumlahGatun = gapok + tunjangan;
@@ -198,13 +234,14 @@ static void SoalEnam()
     gaji = jumlahGatun - (pajak + bpjs);
     totalGaji = (jumlahGatun - (pajak + bpjs)) * bulan;
 
-    Console.WriteLine($"Karyawan atas nama {nama} slip gaji sebagai berikut: ");
-    Console.WriteLine($"Pajak \t {pajak}");
-    Console.WriteLine($"BPJS \t {bpjs}");
-    Console.WriteLine($"Gaji/bulan \t {gaji}");
-    Console.WriteLine($"Total gaji/banyak bulan \t {totalGaji}");
+    Console.WriteLine("--------------");
+    Console.WriteLine($"Karyawan atas nama {nama},\nslip gaji anda sebagai berikut: ");
+    Console.WriteLine();
+    Console.WriteLine($"Pajak \t\t\t: {pajak}");
+    Console.WriteLine($"BPJS \t\t\t: {bpjs}");
+    Console.WriteLine($"Gaji/bulan \t\t: {gaji}");
+    Console.WriteLine($"Total gaji/banyak bulan : {totalGaji}");
 
-    //kendala di type casting
 }
 
 //Soal No 7
@@ -213,15 +250,17 @@ static void SoalTujuh()
 {
     Console.WriteLine("--Soal Nomor Tujuh--");
     Console.WriteLine();
+
+    //INPUT
     Console.Write("Berat badan anda (kg)\t: ");
     int berat = int.Parse(Console.ReadLine());
     Console.Write("Tinggi badan anda (cm)\t: ");
     double tinggi = double.Parse(Console.ReadLine())/100;
+    
 
-    //deklarasi rumus bmi
+
+    //PROSES
     double bmi = berat / (tinggi * tinggi);
-
-    //inisiasi var kategori badan
     string kategori = "";
 
     switch (bmi)
@@ -237,7 +276,13 @@ static void SoalTujuh()
             break;
     }
 
-    Console.WriteLine($"Nilai BMI anda {bmi}\nAnda temasuk {kategori}");
+    float sortBmi = (float) bmi;
+
+    //OUTPUT
+    Console.WriteLine("----------------------");
+    Console.WriteLine("Nilai BMI anda : {0:0.0000}", sortBmi);
+    Console.WriteLine("Anda termasuk {0}", kategori);
+
 }
 
 //Soal No 8
@@ -245,6 +290,8 @@ static void SoalDelapan()
 {
     Console.WriteLine("--Soal Nomor Delapan--");
     Console.WriteLine();
+
+    //INPUT
     Console.Write("Masukan nilai MTK\t: ");
     int nilaiMTK = int.Parse(Console.ReadLine());
     Console.Write("Masukan nilai Fisika\t: ");
@@ -252,13 +299,14 @@ static void SoalDelapan()
     Console.Write("Masukan nilai Kimia\t: ");
     int nilaiKimia = int.Parse(Console.ReadLine());
 
+    //PROSES
     int jumlahNilai = nilaiMTK + nilaiFisika + nilaiKimia;
-    double nilaiRata = jumlahNilai / 3;
+    float nilaiRata = jumlahNilai / 3f;
     string ucapan = "";
 
     switch (nilaiRata)
     {
-        case double x when x >= 50 && x <= 100:
+        case float x when x >= 50 && x <= 100:
             ucapan = "Selamat\nKamu Berhasil\nKamu Hebat";
             break;
         case < 50:
@@ -266,7 +314,9 @@ static void SoalDelapan()
             break;
     }
 
+    //OUTPUT
     Console.WriteLine("----------------");
     Console.WriteLine($"Nilai rata-rata: {nilaiRata}");
     Console.WriteLine(ucapan);
 }
+
