@@ -203,7 +203,7 @@ static void SoalEmpat()
         Console.Write(" ");
     }
 
-}
+}  
 
 
 //Nomer 5
@@ -304,13 +304,13 @@ static void SoalDelapan()
 
     //INPUT
     Console.Write("Masukan angka: ");
-    int angka = int.Parse(Console.ReadLine());
+    float angka = float.Parse(Console.ReadLine());
 
     //PROSES
     var x = angka;
     for (int i = 0; i < angka; i++)
     {
-        for (int j = 0; j < angka; j++)
+        for (float j = 0; j < angka; j++)
         {
             if (i == 0)
             {
@@ -329,7 +329,7 @@ static void SoalDelapan()
                 //OUTPUT
                 Console.Write($"* ");
 
-            }
+            } 
             else
             {
                 //OUTPUT
