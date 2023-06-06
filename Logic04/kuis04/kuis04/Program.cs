@@ -304,13 +304,13 @@ static void SoalDelapan()
 
     //INPUT
     Console.Write("Masukan angka: ");
-    float angka = float.Parse(Console.ReadLine());
+    int angka = int.Parse(Console.ReadLine());
 
     //PROSES
     var x = angka;
     for (int i = 0; i < angka; i++)
     {
-        for (float j = 0; j < angka; j++)
+        for (int j = 0; j < angka; j++)
         {
             if (i == 0)
             {
