@@ -2,7 +2,7 @@
 
 try
 {
-    SoalEmpat();
+    SoalDelapan();
 
 } catch (Exception e)
 {
@@ -110,14 +110,22 @@ static void SoalDua()
     Console.WriteLine();
 
     //INPUT
+    up:
     Console.Write("Masukan kalimat\t: ");
     string kalimat = Console.ReadLine();
+
+    if (kalimat == string.Empty)
+    {
+        Console.Write("Kalimat tidak boleh kosong!");
+        goto up;
+    }
 
     //PROSES
     string[] subs = kalimat.Split(' ');
 
-    for (var i = 0; i < subs.Length; i++)
+    for (int i = 0; i < subs.Length; i++)
     {
+        //Ouput
         Console.WriteLine($"Kata {i + 1}: {subs[i]}");
     }
 
@@ -138,12 +146,29 @@ static void SoalTiga()
     string kalimat = Console.ReadLine();
 
     //PROSES (Cara 1)
-    kalimat = kalimat.Replace("a", "*").Replace("k", "*").Replace("y", "*").Replace("n", "*").Replace("m", "*");
+    //kalimat = kalimat.Replace("a", "*").Replace("k", "*").Replace("y", "*").Replace("n", "*").Replace("m", "*");
+    //Console.WriteLine(kalimat);
 
     //PROSES (Cara 2)
+    string[] array = kalimat.Split();
 
-    //OUTPUT
-    Console.WriteLine(kalimat);
+    foreach (string x in array)
+    {
+        for (int i = 0; i < x.Length; i++)
+        {
+            if (i == 0 || i == x.Length - 1)
+            {
+                Console.Write(x[i]);
+            }
+            else
+            {
+                Console.Write("*");
+            }
+        }
+        Console.Write(" ");
+    }
+
+    
 
 }
 
@@ -160,16 +185,24 @@ static void SoalEmpat()
     //kalimat = kalimat.Replace("a", "*").Replace("k", "*").Replace("y", "*").Replace("n", "*").Replace("m", "*");
 
     //PROSES (Cara 2)
-    string[] array = kalimat.Split(" ");
+    string[] array = kalimat.Split();
 
     foreach (string x in array)
     {
-        Console.Write($"{x} ");
-
+        for (int i = 0; i < x.Length; i++)
+        {
+            if (i == 0 || i == x.Length - 1)
+            {
+                Console.Write("*");
+            }
+            else
+            {
+                Console.Write(x[i]);
+            }
+        }
+        Console.Write(" ");
     }
 
-    //OUTPUT
-    //Console.WriteLine(kalimat);
 }
 
 
@@ -179,6 +212,35 @@ static void SoalLima()
     Console.WriteLine("--Soal Nomer 5--");
     Console.WriteLine();
 
+    //INPUT
+    Console.Write("Masukan kalimat: ");
+    string kalimat = Console.ReadLine();
+
+    //Cara 1
+    // kalimat = kalimat.ToLower();
+    // kalimat = kalimat.Remove(0,1).Remove(4,1).Remove(9,1);
+
+    // Console.WriteLine(kalimat);
+
+    //Cara 2 
+    string[] array = kalimat.Split();
+
+    foreach (string x in array)
+    {
+        for (int i = 0; i < x.Length; i++)
+        {
+            if (i == 0)
+            {
+                Console.Write("");
+            }
+            else
+            {
+                Console.Write(x[i]);
+            }
+        }
+        Console.Write(" ");
+    }
+
 }
 
 //Nomer 6
@@ -186,9 +248,12 @@ static void SoalEnam()
 {
     Console.WriteLine("--Soal Nomer 6--");
     Console.WriteLine();
+
+    //INPUT
     Console.Write("Masukan angka: ");
     int angka = int.Parse(Console.ReadLine());
 
+    //PROSES
     int x = 1;
 
     for (int i = 0; i < angka; i++)
@@ -212,18 +277,22 @@ static void SoalTujuh()
     Console.WriteLine("--Soal Nomer 7--");
     Console.WriteLine();
 
-    
-    for (int i = 1; i < 10; i++)
+    Console.Write("Masukan angka: ");
+    int angka = int.Parse(Console.ReadLine());
+
+    //inisiasi variabel
+    int x = 0; //nilai output
+    int x1 = 0; //nilai sebelumnya
+    int x2 = 1; //nilai sekarang
+
+    for (int i = 0; i < angka; i++)
     {
-        if (i == 1 || i == 2)
-        {
-           Console.Write($"{i} ");
-        }
-        else
-        {
-            Console.Write($"{(i - 1) + (i - 2)} ");
-        }
+        x = x1 + x2;
+        x2 = x1;
+        x1 = x;
+        Console.Write($"{x}, ");
     }
+    //coba debug
 }
 
 
@@ -232,24 +301,43 @@ static void SoalDelapan()
 {
     Console.WriteLine("--Soal Nomer 8--");
     Console.WriteLine();
+
+    //INPUT
     Console.Write("Masukan angka: ");
     int angka = int.Parse(Console.ReadLine());
 
+    //PROSES
+    var x = angka;
     for (int i = 0; i < angka; i++)
     {
-        for (int j = angka; j > 0; j--)
+        for (int j = 0; j < angka; j++)
         {
-            if (i == 0 || i == angka - 1)
+            if (i == 0)
             {
-                Console.Write($"{j} ");
+                //OUTPUT
+                Console.Write($"{j + 1} ");
 
-            } else
+            }
+            else if (i == angka - 1)
             {
+                //OUTPUT
+                Console.Write($"{x} ");
+                x -= 1;
+            }
+            else if (j == 0 || j == angka - 1)
+            {
+                //OUTPUT
                 Console.Write($"* ");
+
+            }
+            else
+            {
+                //OUTPUT
+                Console.Write($"  ");
             }
         }
         Console.WriteLine();
-        //belum selesai
+
     }
 
 }
