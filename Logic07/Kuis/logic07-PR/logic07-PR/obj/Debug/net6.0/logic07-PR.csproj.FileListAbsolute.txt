@@ -1,0 +1,15 @@
+C:\BATCH_319\LogicToGithub\Logic07\Kuis\logic07-PR\logic07-PR\bin\Debug\net6.0\logic07-PR.exe
+C:\BATCH_319\LogicToGithub\Logic07\Kuis\logic07-PR\logic07-PR\bin\Debug\net6.0\logic07-PR.deps.json
+C:\BATCH_319\LogicToGithub\Logic07\Kuis\logic07-PR\logic07-PR\bin\Debug\net6.0\logic07-PR.runtimeconfig.json
+C:\BATCH_319\LogicToGithub\Logic07\Kuis\logic07-PR\logic07-PR\bin\Debug\net6.0\logic07-PR.dll
+C:\BATCH_319\LogicToGithub\Logic07\Kuis\logic07-PR\logic07-PR\bin\Debug\net6.0\logic07-PR.pdb
+C:\BATCH_319\LogicToGithub\Logic07\Kuis\logic07-PR\logic07-PR\obj\Debug\net6.0\logic07-PR.csproj.AssemblyReference.cache
+C:\BATCH_319\LogicToGithub\Logic07\Kuis\logic07-PR\logic07-PR\obj\Debug\net6.0\logic07-PR.GeneratedMSBuildEditorConfig.editorconfig
+C:\BATCH_319\LogicToGithub\Logic07\Kuis\logic07-PR\logic07-PR\obj\Debug\net6.0\logic07-PR.AssemblyInfoInputs.cache
+C:\BATCH_319\LogicToGithub\Logic07\Kuis\logic07-PR\logic07-PR\obj\Debug\net6.0\logic07-PR.AssemblyInfo.cs
+C:\BATCH_319\LogicToGithub\Logic07\Kuis\logic07-PR\logic07-PR\obj\Debug\net6.0\logic07-PR.csproj.CoreCompileInputs.cache
+C:\BATCH_319\LogicToGithub\Logic07\Kuis\logic07-PR\logic07-PR\obj\Debug\net6.0\logic07-PR.dll
+C:\BATCH_319\LogicToGithub\Logic07\Kuis\logic07-PR\logic07-PR\obj\Debug\net6.0\refint\logic07-PR.dll
+C:\BATCH_319\LogicToGithub\Logic07\Kuis\logic07-PR\logic07-PR\obj\Debug\net6.0\logic07-PR.pdb
+C:\BATCH_319\LogicToGithub\Logic07\Kuis\logic07-PR\logic07-PR\obj\Debug\net6.0\logic07-PR.genruntimeconfig.cache
+C:\BATCH_319\LogicToGithub\Logic07\Kuis\logic07-PR\logic07-PR\obj\Debug\net6.0\ref\logic07-PR.dll
