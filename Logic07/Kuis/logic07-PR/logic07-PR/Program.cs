@@ -81,10 +81,7 @@ static void SoalEmpat()
     //Console.Write("Tanggal mulai (dd/mm/yy)");
     //DateTime tanggalMulai = DateTime.Parse(Console.ReadLine());
 
-    DateTime tanggal = new DateTime(2022, 09, 16);
-    DateTime tanggalFt1 = tanggal.AddDays(10);
-
-    Console.WriteLine(tanggalFt1.ToString("ddd, MM yyyy"));
+ 
 
 
 
@@ -98,7 +95,7 @@ static void SoalLima()
 
     //INPUT
     Console.Write("Masukan kalimat\t: ");
-    string nama = Console.ReadLine().ToLower();
+    string nama = Console.ReadLine().ToLower( );
 
     //PROSES
     char[] namaS = nama.ToCharArray(); ;
@@ -108,17 +105,18 @@ static void SoalLima()
 
     foreach (char s in namaS)
     {
+
         switch (s)
         {
             case char x when x == 'a' || x == 'i' || x == 'u' || x == 'e' || x == 'o':
                 hurufVokal += 1;
                 break;
-            case ' ':
-                hurufVokal += 0;
-                hurufKonsonan += 0;
+            case char x when x >= 'a' && x <= 'z':
+                hurufKonsonan += 1;
                 break;
             default:
-                hurufKonsonan += 1;
+                hurufVokal += 0;
+                hurufKonsonan += 0;
                 break;
         }
 
