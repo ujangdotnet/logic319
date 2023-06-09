@@ -2,7 +2,7 @@
 
 try
 {
-    SoalEmpat();
+    SoalSepuluh();
 
     //Console.ReadKey();
 }
@@ -78,13 +78,34 @@ static void SoalEmpat()
     Console.WriteLine("Soal Empat");
     Console.WriteLine();
 
-    //Console.Write("Tanggal mulai (dd/mm/yy)");
-    //DateTime tanggalMulai = DateTime.Parse(Console.ReadLine());
+    Console.Write("Tanggal mulai (yyyy/mm/dd)\t: ");
+    string tglMulai = Console.ReadLine();
+    DateTime startDate = DateTime.Parse(tglMulai);
+    Console.Write("Tanggal libur (pisahkan dengan koma): ");
+    string tanggaLibur = Console.ReadLine();
+    string[] tglLibur = tanggaLibur.Split(',');
+    int[] hariLibur = Array.ConvertAll(tglLibur, int.Parse);
+     
+    DateTime date = startDate;
 
- 
+    for ( int i = 0; i < 10; i++)
+    {
+        if (date.DayOfWeek == DayOfWeek.Saturday)
+        {
+            date = date.AddDays(2);
+        }
+        for (int j = 0; j < hariLibur.Length; j++)
+        {
+            if (date.Day == hariLibur[j])
+            {
+                date = date.AddDays(1);
+            }
+        }
+        date = date.AddDays(1);
+    }
 
-
-
+    Console.WriteLine($"Kelas akan ujian pada {date.ToString("D")}");
+    
 }
 
 //Soal 5
@@ -145,6 +166,7 @@ static void SoalEnam()
     //Cara 1
     foreach (char c in namaChar)
     {
+       
         Console.WriteLine($"***{c}***");
     }
 
@@ -191,6 +213,7 @@ static void SoalTujuh()
     } else if (sisaUang < 0)
     {
         Console.WriteLine("--------------------------------------------");
+        Console.WriteLine($"Elsa harus membayar\t= Rp{yangHarusDibayar}");
         Console.WriteLine($"Uang kamu kurang {sisaUang}");
     } else
     {
@@ -236,7 +259,8 @@ static void SoalSembilan()
 {
     Console.WriteLine("Soal Sembilan");
     Console.WriteLine();
-
+    
+    //INPUT
     Console.Write("Masukan 9 angka bilangan bulat\n(pisahkan dengan koma)\t: ");
     string angka = Console.ReadLine();
     string[] angkaS = angka.Split(',');
@@ -266,6 +290,58 @@ static void SoalSembilan()
 
 }
 
+static void SoalSembilan2()
+{
+    Console.WriteLine("--Soal Sembilan Cara 2--");
+    int[,] angkaArr = { 
+        { 11, 2, 4 },       // (0,0) (0,1) (0,2)
+        { 4, 5, 6 },        // (1,0) (1,1) (1,2)
+        { 10, 8, -12 } };   // (2,0) (2,1) (2,2)
+
+    int diagonalPertama = 0;
+    int diagonalKedua = 0;
+    string dayaTampungDP = "";
+    string dayaTampungDK = "";
+    for (int i = 0; i < angkaArr.GetLength(0); i++)
+    {
+        for (int j = 0; j < angkaArr.GetLength(1); j++)
+        {
+            if (i == j)
+            {
+                diagonalPertama += angkaArr[i,j];
+                //dayaTampungDP += String.Join("\t", angkaArr[i,j]);
+                switch (dayaTampungDP)
+                {
+                    case "":
+                        dayaTampungDP += angkaArr[i, j].ToString();
+                        break;
+                }
+                dayaTampungDP += dayaTampungDP == "" ? angkaArr[i,j].ToString() : angkaArr[i,j] < 0 ? " + " + $"({angkaArr[i, j].ToString()})" : " + " + angkaArr[i, j].ToString(); //$"({angkaArr[i, j].ToString()})"
+
+            }
+            if (j == angkaArr.GetLength(1) - 1 - i)
+            {
+                diagonalKedua += angkaArr[i,j];
+                dayaTampungDK += dayaTampungDK == "" ? angkaArr[i, j].ToString() : angkaArr[i, j] < 0 ? " + " + $"({angkaArr[i, j].ToString()})" : " + " + angkaArr[i, j].ToString();
+
+            }
+            Console.Write($"{angkaArr[i, j]}\t");
+        }
+        Console.WriteLine();
+    }
+
+    Console.WriteLine("--------------------");
+    int perbedaan = diagonalPertama - diagonalKedua;
+
+    Console.WriteLine();
+    Console.WriteLine("------------------------");
+    Console.WriteLine($"Diagonal pertama: {dayaTampungDP} = {diagonalPertama}");
+    Console.WriteLine($"Diagonal kedua: {dayaTampungDK} = {diagonalKedua}");
+    Console.WriteLine("------------------------");
+    Console.WriteLine($"Perbedaan |{diagonalPertama} - {diagonalKedua}| = {perbedaan}");
+
+}
+
 //Soal 10
 static void SoalSepuluh()
 {
@@ -277,26 +353,19 @@ static void SoalSepuluh()
     string[] angkaS = angka.Split(',');
     int[] angkaArr = Array.ConvertAll(angkaS, int.Parse);
 
-    
-    //foreach (int x in angka)
-    //{
-    //    if (x == angka.Max())
-    //    {
-    //        Console.Write(x); 
-    //    }
-    //}
 
     string s = "";
     for(int i = 0; i < angkaArr.Length; i++)
     {
         if (angkaArr[i] == angkaArr.Max())
         {
-            //Console.Write(angka[i]);
             s += String.Join(",", angkaArr[i]);
         }
     }
 
-    Console.Write(s.Length);
+    Console.WriteLine("---------------");
+    Console.WriteLine($"Jumlah angka tertinggi ada {s.Length}\nyaitu angka {angkaArr.Max()}.");
+    //Console.Write(s.Length);
      
 
 }
