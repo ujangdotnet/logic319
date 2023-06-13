@@ -20,7 +20,7 @@ gender VARCHAR(10)
 );
 
 --create view
-CREATE VIEW vw_mahasiswa as SELECT * FROM mahasiswa;
+--CREATE VIEW vw_mahasiswa as SELECT * FROM mahasiswa;
 
 --//ALTER//
 --add column
@@ -34,7 +34,7 @@ ALTER TABLE mahasiswa drop column nomor_hp;
 
 --//DROP
 --drop database
-DROP DATABASE [nama-database];
+--DROP DATABASE [nama-database];
 
 
 
