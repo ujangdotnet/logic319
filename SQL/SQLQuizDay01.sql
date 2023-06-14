@@ -109,7 +109,10 @@ SELECT MIN(Gaji) as Gaji_Terendah, MAX(Gaji) as Terbesar
 FROM tblGaji;
 
 --No 7
-SELECT Gaji FROM tblGaji
+SELECT Pgr.Kota, Gj.Gaji
+FROM tblPengarang as Pgr
+JOIN tblGaji as Gj
+ON Pgr.Kd_Pengarang = Gj.Kd_Pengarang
 WHERE Gaji > 600000;
 
 --No 8
@@ -121,12 +124,13 @@ SELECT Pgr.Kota as Kota, Gj.Gaji as Gaji
 FROM tblPengarang as Pgr
 JOIN tblGaji as Gj
 ON Pgr.Kd_Pengarang = Gj.Kd_Pengarang 
-ORDER BY Gaji;
+ORDER BY Kota;
 
 --No 10
 SELECT *
 FROM tblPengarang
 WHERE Kd_Pengarang BETWEEN 'P0003' AND 'P0006';
+
 
 --No 11
 --Cara 1
@@ -137,12 +141,16 @@ WHERE Kota = 'Yogya' OR Kota = 'Solo' OR Kota = 'Magelang';
 --Cara 2
 SELECT *
 FROM tblPengarang
-WHERE Kota IN ('Yogya', 'Solo', 'Magelang');
+WHERE Kota IN ('Yogya', 'Solo', 'Magelang'); 
 
 --No 12
 SELECT *
 FROM tblPengarang
 WHERE NOT Kota = 'Yogya';
+
+SELECT *
+FROM tblPengarang
+WHERE  Kota != 'Yogya';
 
 --No 13
 --13a
@@ -182,6 +190,11 @@ ALTER COLUMN Kelamin VARCHAR(10);
 --No 17
 ALTER TABLE tblPengarang
 ADD Gelar VARCHAR(12);
+ 
+ALTER TABLE tblPengarang
+DROP COLUMN Gelar;
+
+SELECT * FROM tblPengarang;
 
 --No 18
 UPDATE tblPengarang
@@ -195,7 +208,8 @@ WHERE Nama = 'Rian'*/
 CREATE VIEW vwPengarang AS
 SELECT Pgr.Kd_Pengarang, Pgr.Nama, Pgr.Kota, Gj.Gaji
 FROM tblPengarang as Pgr
-JOIN tblGaji as Gj
+LEFT JOIN tblGaji as Gj
 ON Pgr.Kd_Pengarang = Gj.Kd_Pengarang
 
 SELECT * FROM vwPengarang; 
+DROP VIEW vwPengarang;

@@ -41,7 +41,15 @@ ALTER TABLE mahasiswa drop column nomor_hp;
 --DML (Data Manipulation Language)
 
 --Insert into
-INSERT INTO mahasiswa(name,address,email) VALUES ('Banu','Ciamis','banu@gmail.com');
+INSERT INTO mahasiswa(name,address,email)
+VALUES 
+('Agus','Ciamis','Agus@gmail.com'),
+('Ahmad','Ciamis','Ahmad@gmail.com'),
+('Cepi','Ciamis','Cepi@gmail.com'),
+('Deni','Ciamis','Deni@gmail.com'),
+('Doni','Ciamis','Doni@gmail.com'),
+('Erwan','Ciamis','Erwan@gmail.com'),
+('Erwin','Ciamis','Erwin@gmail.com');
 
 INSERT INTO biodata(mahasiswa_id,tgl_lahir,gender) VALUES (1,'2003-06-12','laki-laki');
 INSERT INTO biodata(mahasiswa_id,tgl_lahir,gender) VALUES (2,'2005-06-12','laki-laki');
