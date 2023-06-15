@@ -109,42 +109,102 @@ VALUES
 SELECT * FROM genre;
 
 --SOAL 1
-SELECT nm_produser AS Nama, pendapatan
-FROM produser AS prod
-JOIN film
-ON prod.kd_produser = film.produser;
+SELECT nm_produser, SUM(pendapatan) AS pendapatan
+FROM produser
+JOIN film ON produser.kd_produser = film.produser
+GROUP BY nm_produser
+HAVING nm_produser = 'MARVEL';
 
 --SOAL 2
-SELECT nm_film, nominasi
+SELECT nm_films, nominasi
 FROM film
 WHERE nominasi = 0;
 
 --SOAL 3
-SELECT nm_film
+SELECT nm_films
 FROM film
-WHERE nm_film LIKE 'p%';
+WHERE nm_films LIKE 'p%';
 
 --SOAL 4
-SELECT nm_film
+SELECT nm_films
 FROM film
-WHERE nm_film LIKE '%y';
+WHERE nm_films LIKE '%y';
 
 --SOAL 5
-SELECT nm_film
+SELECT nm_films
 FROM film
-WHERE nm_film LIKE '%d%';
+WHERE nm_films LIKE '%d%';
 
 --SOAL 6
-SELECT nm_film, nm_artis
+SELECT nm_films, nm_artis
 FROM film
-JOIN artis
-ON film.artis = artis.kd_artis
+JOIN artis ON film.artis = artis.kd_artis
 
 --SOAL 7
-SELECT nm_film, negara
+SELECT nm_films, negara
 FROM film
-JOIN artis
-ON film.artis = artis.kd_artis
+JOIN artis ON film.artis = artis.kd_artis
 WHERE negara LIKE 'HK';
 
---SOAL 8 (foreign key)
+--SOAL 8
+SELECT nm_films, nm_negara
+FROM film
+JOIN artis ON film.artis = artis.kd_artis
+JOIN negara ON artis.negara = negara.kd_negara
+WHERE nm_negara NOT LIKE '%o%';
+
+--SOAL 9
+SELECT nm_artis
+FROM artis
+LEFT JOIN film ON artis.kd_artis = film.artis
+WHERE film.artis IS NULL
+
+--SOAL 10
+SELECT DISTINCT nm_artis, nm_genre
+FROM artis
+JOIN film ON artis.kd_artis = film.artis
+JOIN genre ON film.genre = genre.kd_genre
+WHERE genre.nm_genre = 'DRAMA';
+
+--SOAL 11
+SELECT DISTINCT nm_artis, nm_genre
+FROM artis
+JOIN film ON artis.kd_artis = film.artis
+JOIN genre ON film.genre = genre.kd_genre
+WHERE genre.nm_genre = 'ACTION';
+
+--SOAL 12
+SELECT negara.kd_negara, negara.nm_negara, COUNT(nm_films) AS jumlah_film
+FROM negara
+LEFT JOIN artis ON negara.kd_negara = artis.negara
+LEFT JOIN film ON artis.kd_artis = film.artis
+GROUP BY nm_negara, kd_negara
+ORDER BY nm_negara
+
+--cara 2
+SELECT negara.kd_negara, negara.nm_negara, COUNT(nm_films) AS jumlah_film
+FROM artis
+JOIN film ON film.artis = artis.kd_artis
+RIGHT JOIN negara ON artis.negara = negara.kd_negara
+GROUP BY nm_negara, kd_negara
+ORDER BY nm_negara
+
+--SOAL 13
+SELECT nm_films
+FROM film
+JOIN produser ON film.produser = produser.kd_produser
+WHERE produser.international = 'YA'
+
+--SOAL 14
+SELECT nm_produser, COUNT(nm_films) AS jumlah_film
+FROM film
+RIGHT JOIN produser ON film.produser = produser.kd_produser
+GROUP BY nm_produser
+
+
+SELECT * FROM artis;
+SELECT * FROM film;
+SELECT * FROM produser;
+SELECT * FROM negara;
+
+EXEC sp_rename 'film.nm_film', 'nm_films';
