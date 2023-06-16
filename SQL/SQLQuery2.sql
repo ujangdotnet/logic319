@@ -30,7 +30,9 @@ salesperson_id int,
 amount decimal(18,2)
 );
 
+SELECT * FROM salesPerson;
 SELECT * FROM orders;
+
 
 INSERT INTO orders(order_date, cust_id, salesperson_id, amount)
 VALUES
@@ -44,12 +46,7 @@ VALUES
 
 --DROP TABLE orders;
 
---Soal a
-SELECT s.name, COUNT(o.salesperson_id) AS person_order
-FROM salesPerson AS s
-JOIN orders AS o ON s.ID = o.salesperson_id
-GROUP BY s.name
-HAVING COUNT(o.salesperson_id) > 1;
+ 
 
 --soal b
 SELECT s.name, SUM(o.amount) AS order_amount
@@ -59,11 +56,17 @@ GROUP BY s.name
 HAVING SUM(o.amount) > 1000;
 
 --soal c (belum selesai)
-SELECT s.name, s.bod, s.salary, SUM(o.amount) AS order_amount
+/*
+Informasi nama sales, umur, gaji dan total amount order yang tahun ordernya >= 2020 
+dan data ditampilan berurut sesuai dengan umur (ascending).
+*/
+
+SELECT s.name, DATEDIFF(year, s.bod, GETDATE()) AS umur, s.salary, SUM(o.amount) AS order_amount, o.order_date
 FROM salesPerson AS s
 JOIN orders AS o ON s.ID = o.salesperson_id
-GROUP BY s.name, s.bod, s.salary
-HAVING o.order_date > '2020'
+GROUP BY s.name, s.salary, DATEDIFF(year, s.bod, GETDATE()), o.order_date
+HAVING year(o.order_date) >= 2020
+ORDER BY umur
 
 --order >= 2020
 --ORDER BY salesPerson.bod
@@ -73,12 +76,12 @@ SELECT s.name, AVG(o.amount) AS rata2_amount
 FROM salesPerson AS s
 JOIN orders AS o ON s.ID = o.salesperson_id
 GROUP BY s.name
-ORDER BY AVG(o.amount) DESC
+ORDER BY rata2_amount DESC
 
---soal e
+--soal e (bisa pake case when)
 SELECT s.name, COUNT(o.salesperson_id) AS person_order, SUM(o.amount) AS amount, (s.salary * 30 / 100) AS bonus
 FROM salesPerson AS s
-RIGHT JOIN orders AS o ON s.ID = o.salesperson_id
+LEFT JOIN orders AS o ON s.ID = o.salesperson_id
 GROUP BY s.name, (s.salary * 30 / 100)
 HAVING COUNT(o.salesperson_id) > 2 AND SUM(o.amount) > 1000;	
 

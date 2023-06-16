@@ -1,0 +1,15 @@
+C:\BATCH_319\LogicToGithub\LatihanSoal\reviewLogic\reviewLogic\bin\Debug\net6.0\reviewLogic.exe
+C:\BATCH_319\LogicToGithub\LatihanSoal\reviewLogic\reviewLogic\bin\Debug\net6.0\reviewLogic.deps.json
+C:\BATCH_319\LogicToGithub\LatihanSoal\reviewLogic\reviewLogic\bin\Debug\net6.0\reviewLogic.runtimeconfig.json
+C:\BATCH_319\LogicToGithub\LatihanSoal\reviewLogic\reviewLogic\bin\Debug\net6.0\reviewLogic.dll
+C:\BATCH_319\LogicToGithub\LatihanSoal\reviewLogic\reviewLogic\bin\Debug\net6.0\reviewLogic.pdb
+C:\BATCH_319\LogicToGithub\LatihanSoal\reviewLogic\reviewLogic\obj\Debug\net6.0\reviewLogic.csproj.AssemblyReference.cache
+C:\BATCH_319\LogicToGithub\LatihanSoal\reviewLogic\reviewLogic\obj\Debug\net6.0\reviewLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\BATCH_319\LogicToGithub\LatihanSoal\reviewLogic\reviewLogic\obj\Debug\net6.0\reviewLogic.AssemblyInfoInputs.cache
+C:\BATCH_319\LogicToGithub\LatihanSoal\reviewLogic\reviewLogic\obj\Debug\net6.0\reviewLogic.AssemblyInfo.cs
+C:\BATCH_319\LogicToGithub\LatihanSoal\reviewLogic\reviewLogic\obj\Debug\net6.0\reviewLogic.csproj.CoreCompileInputs.cache
+C:\BATCH_319\LogicToGithub\LatihanSoal\reviewLogic\reviewLogic\obj\Debug\net6.0\reviewLogic.dll
+C:\BATCH_319\LogicToGithub\LatihanSoal\reviewLogic\reviewLogic\obj\Debug\net6.0\refint\reviewLogic.dll
+C:\BATCH_319\LogicToGithub\LatihanSoal\reviewLogic\reviewLogic\obj\Debug\net6.0\reviewLogic.pdb
+C:\BATCH_319\LogicToGithub\LatihanSoal\reviewLogic\reviewLogic\obj\Debug\net6.0\reviewLogic.genruntimeconfig.cache
+C:\BATCH_319\LogicToGithub\LatihanSoal\reviewLogic\reviewLogic\obj\Debug\net6.0\ref\reviewLogic.dll
