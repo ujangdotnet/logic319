@@ -1,0 +1,15 @@
+C:\BATCH_319\LogicToGithub\LatihanSoal\bilanganprima\bilanganprima\bin\Debug\net6.0\bilanganprima.exe
+C:\BATCH_319\LogicToGithub\LatihanSoal\bilanganprima\bilanganprima\bin\Debug\net6.0\bilanganprima.deps.json
+C:\BATCH_319\LogicToGithub\LatihanSoal\bilanganprima\bilanganprima\bin\Debug\net6.0\bilanganprima.runtimeconfig.json
+C:\BATCH_319\LogicToGithub\LatihanSoal\bilanganprima\bilanganprima\bin\Debug\net6.0\bilanganprima.dll
+C:\BATCH_319\LogicToGithub\LatihanSoal\bilanganprima\bilanganprima\bin\Debug\net6.0\bilanganprima.pdb
+C:\BATCH_319\LogicToGithub\LatihanSoal\bilanganprima\bilanganprima\obj\Debug\net6.0\bilanganprima.csproj.AssemblyReference.cache
+C:\BATCH_319\LogicToGithub\LatihanSoal\bilanganprima\bilanganprima\obj\Debug\net6.0\bilanganprima.GeneratedMSBuildEditorConfig.editorconfig
+C:\BATCH_319\LogicToGithub\LatihanSoal\bilanganprima\bilanganprima\obj\Debug\net6.0\bilanganprima.AssemblyInfoInputs.cache
+C:\BATCH_319\LogicToGithub\LatihanSoal\bilanganprima\bilanganprima\obj\Debug\net6.0\bilanganprima.AssemblyInfo.cs
+C:\BATCH_319\LogicToGithub\LatihanSoal\bilanganprima\bilanganprima\obj\Debug\net6.0\bilanganprima.csproj.CoreCompileInputs.cache
+C:\BATCH_319\LogicToGithub\LatihanSoal\bilanganprima\bilanganprima\obj\Debug\net6.0\bilanganprima.dll
+C:\BATCH_319\LogicToGithub\LatihanSoal\bilanganprima\bilanganprima\obj\Debug\net6.0\refint\bilanganprima.dll
+C:\BATCH_319\LogicToGithub\LatihanSoal\bilanganprima\bilanganprima\obj\Debug\net6.0\bilanganprima.pdb
+C:\BATCH_319\LogicToGithub\LatihanSoal\bilanganprima\bilanganprima\obj\Debug\net6.0\bilanganprima.genruntimeconfig.cache
+C:\BATCH_319\LogicToGithub\LatihanSoal\bilanganprima\bilanganprima\obj\Debug\net6.0\ref\bilanganprima.dll

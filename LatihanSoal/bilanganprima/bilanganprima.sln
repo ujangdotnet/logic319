@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bilanganprima", "bilanganprima\bilanganprima.csproj", "{45DCBF9C-D88E-49A8-B882-5E329D3AA81E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45DCBF9C-D88E-49A8-B882-5E329D3AA81E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45DCBF9C-D88E-49A8-B882-5E329D3AA81E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45DCBF9C-D88E-49A8-B882-5E329D3AA81E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45DCBF9C-D88E-49A8-B882-5E329D3AA81E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CEEC5125-0217-4FD0-8068-1FB4320DEEA0}
+	EndGlobalSection
+EndGlobal

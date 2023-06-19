@@ -88,10 +88,92 @@
  --Soal 2
  SELECT (k.nama_depan + ' ' + k.nama_belakang) AS nama_lengkap, j.nama_jabatan, d.nama_divisi,
  (j.gaji_pokok+j.tunjangan_jabatan+p.tunjangan_kinerja) AS total_gaji,
- (5 / 100 * j.gaji_pokok),
- (j.gaji_pokok + j.tunjangan_jabatan) AS gaji_tunjangan
+ (0.05 * (j.gaji_pokok+j.tunjangan_jabatan+p.tunjangan_kinerja)) AS pajak,
+ ((j.gaji_pokok+j.tunjangan_jabatan+p.tunjangan_kinerja) - (0.05 * (j.gaji_pokok+j.tunjangan_jabatan+p.tunjangan_kinerja))) AS gaji_bersih
  FROM tb_karyawan AS k
  JOIN tb_pekerjaan AS p ON k.nip = p.nip
  JOIN tb_jabatan AS j ON p.kode_jabatan = j.kd_jabatan
  JOIN tb_divisi AS d ON p.kode_divisi = d.kd_divisi
- WHERE j.gaji_pokok + j.tunjangan_jabatan < 5000000;
+ WHERE p.kota_penempatan <> 'Sukabumi' AND k.jenis_kelamin = 'Pria'
+
+ --Soal 3
+ SELECT k.nip, (k.nama_depan + ' ' + k.nama_belakang) AS nama_lengkap,  j.nama_jabatan, d.nama_divisi,
+ (0.25*((j.gaji_pokok+j.tunjangan_jabatan+p.tunjangan_kinerja)*7)) AS bonus
+ FROM tb_karyawan AS k
+ JOIN tb_pekerjaan AS p ON k.nip = p.nip
+ JOIN tb_jabatan AS j ON p.kode_jabatan = j.kd_jabatan
+ JOIN tb_divisi AS d ON p.kode_divisi = d.kd_divisi
+
+ --Soal 4
+ SELECT k.nip, CONCAT(k.nama_depan,' ',k.nama_belakang) AS nama_lengkap, j.nama_jabatan, d.nama_divisi,
+ (j.gaji_pokok+j.tunjangan_jabatan+p.tunjangan_kinerja) AS total_gaji,
+ (0.05*(j.gaji_pokok+j.tunjangan_jabatan+p.tunjangan_kinerja)) AS infaq
+ FROM tb_karyawan AS k
+ JOIN tb_pekerjaan AS p ON k.nip = p.nip
+ JOIN tb_jabatan AS j ON p.kode_jabatan = j.kd_jabatan
+ JOIN tb_divisi AS d ON p.kode_divisi = d.kd_divisi
+ WHERE p.kode_jabatan = 'MGR'
+
+  
+
+ --Soal 5
+ SELECT k.nip, (k.nama_depan + ' ' + k.nama_belakang) AS nama_lengkap, j.nama_jabatan, k.pendidikan_terakhir,
+ (2000000) AS tunjangan_pendidikan,
+ (j.gaji_pokok+j.tunjangan_jabatan+ 2000000) AS total_gaji
+ FROM tb_karyawan AS k
+ JOIN tb_pekerjaan AS p ON k.nip = p.nip
+ JOIN tb_jabatan AS j ON p.kode_jabatan = j.kd_jabatan
+ WHERE k.pendidikan_terakhir LIKE 'S1%'
+
+ --Soal 6
+ SELECT k.nip, (k.nama_depan + ' ' + k.nama_belakang) AS nama_lengkap,  j.nama_jabatan, d.nama_divisi, 
+ CASE
+	WHEN p.kode_jabatan = 'MGR' THEN 0.25*((j.gaji_pokok+j.tunjangan_jabatan+p.tunjangan_kinerja)*7)
+	WHEN p.kode_jabatan = 'ST' THEN 0.25*((j.gaji_pokok+j.tunjangan_jabatan+p.tunjangan_kinerja)*5)
+	ELSE 0.25*((j.gaji_pokok+j.tunjangan_jabatan+p.tunjangan_kinerja)*2)
+ END AS bonus
+ FROM tb_karyawan AS k
+ JOIN tb_pekerjaan AS p ON k.nip = p.nip
+ JOIN tb_jabatan AS j ON p.kode_jabatan = j.kd_jabatan
+ JOIN tb_divisi AS d ON p.kode_divisi = d.kd_divisi
+ 
+ --Soal 7
+ ALTER TABLE tb_karyawan
+ ADD CONSTRAINT UNIQUE_nip UNIQUE (nip);
+
+ ALTER TABLE tb_karyawan
+ DROP CONSTRAINT UNIQUE_nip;
+
+ --Soal 8
+ CREATE INDEX idx_nip
+ ON tb_karyawan(nip);
+
+ DROP INDEX idx_nip ON tb_karyawan;
+
+ --Soal 9
+ SELECT k.nama_depan + ' ' + UPPER(k.nama_belakang) AS nama_lengkap
+ FROM tb_karyawan AS k
+ WHERE k.nama_belakang LIKE '%W%' 
+
+ SELECT --k.nama_depan + ' ' + k.nama_belakang AS nama_lengkap,
+ CASE
+	WHEN k.nama_belakang LIKE '%W%' THEN k.nama_depan + ' ' + UPPER(k.nama_belakang)
+	ELSE k.nama_depan + ' ' + k.nama_belakang
+ END AS nama_lengkap
+ FROM tb_karyawan AS k
+ WHERE k.nama_belakang LIKE '%W%' 
+
+
+
+ --Soal 10
+ SELECT k.nip, (k.nama_depan + ' ' + k.nama_belakang) AS nama_lengkap, k.tgl_masuk, j.nama_jabatan, d.nama_divisi,
+ (j.gaji_pokok+j.tunjangan_jabatan+p.tunjangan_kinerja) AS total_gaji,
+ DATEDIFF(YEAR, k.tgl_masuk, GETDATE()) AS lama_bekerja,
+ CASE
+	WHEN DATEDIFF(YEAR, k.tgl_masuk, GETDATE()) >= 8 THEN 0.1 * (j.gaji_pokok+j.tunjangan_jabatan+p.tunjangan_kinerja)
+ END AS bonus
+ FROM tb_karyawan AS k
+ JOIN tb_pekerjaan AS p ON k.nip = p.nip
+ JOIN tb_jabatan AS j ON p.kode_jabatan = j.kd_jabatan
+ JOIN tb_divisi AS d ON p.kode_divisi = d.kd_divisi
+ WHERE DATEDIFF(YEAR, k.tgl_masuk, GETDATE()) >= 8;
