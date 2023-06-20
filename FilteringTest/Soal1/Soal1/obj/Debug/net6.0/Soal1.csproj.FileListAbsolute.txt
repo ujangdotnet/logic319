@@ -1,0 +1,15 @@
+C:\BATCH_319\FilteringTest\Soal1\Soal1\obj\Debug\net6.0\Soal1.csproj.AssemblyReference.cache
+C:\BATCH_319\FilteringTest\Soal1\Soal1\obj\Debug\net6.0\Soal1.GeneratedMSBuildEditorConfig.editorconfig
+C:\BATCH_319\FilteringTest\Soal1\Soal1\obj\Debug\net6.0\Soal1.AssemblyInfoInputs.cache
+C:\BATCH_319\FilteringTest\Soal1\Soal1\obj\Debug\net6.0\Soal1.AssemblyInfo.cs
+C:\BATCH_319\FilteringTest\Soal1\Soal1\obj\Debug\net6.0\Soal1.csproj.CoreCompileInputs.cache
+C:\BATCH_319\FilteringTest\Soal1\Soal1\bin\Debug\net6.0\Soal1.exe
+C:\BATCH_319\FilteringTest\Soal1\Soal1\bin\Debug\net6.0\Soal1.deps.json
+C:\BATCH_319\FilteringTest\Soal1\Soal1\bin\Debug\net6.0\Soal1.runtimeconfig.json
+C:\BATCH_319\FilteringTest\Soal1\Soal1\bin\Debug\net6.0\Soal1.dll
+C:\BATCH_319\FilteringTest\Soal1\Soal1\bin\Debug\net6.0\Soal1.pdb
+C:\BATCH_319\FilteringTest\Soal1\Soal1\obj\Debug\net6.0\Soal1.dll
+C:\BATCH_319\FilteringTest\Soal1\Soal1\obj\Debug\net6.0\refint\Soal1.dll
+C:\BATCH_319\FilteringTest\Soal1\Soal1\obj\Debug\net6.0\Soal1.pdb
+C:\BATCH_319\FilteringTest\Soal1\Soal1\obj\Debug\net6.0\Soal1.genruntimeconfig.cache
+C:\BATCH_319\FilteringTest\Soal1\Soal1\obj\Debug\net6.0\ref\Soal1.dll
