@@ -82,7 +82,7 @@ static void CamelCaseLetter()
     {
         if (i == 0 || Char.IsUpper(kataS[i]))
         {
-            hitung++;
+            hitung++; 
         }
     }
 
@@ -95,4 +95,5 @@ static void CamelCaseLetter()
 }
 
 //strong 
+
 
